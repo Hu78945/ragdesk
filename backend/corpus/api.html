@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+<head><title>Kestrel REST API Reference</title><style>body{font-family:sans-serif}</style></head>
+<body>
+<h1>Kestrel REST API Reference</h1>
+<p>The REST API is served under the <code>/api/v1</code> prefix on the same port as the dashboard. All requests must send an <code>Authorization: Bearer &lt;token&gt;</code> header. Responses are JSON.</p>
+
+<h2>Jobs</h2>
+<p><code>GET /api/v1/jobs</code> lists all jobs with their schedule, queue, and paused state.</p>
+<p><code>POST /api/v1/jobs/{name}/trigger</code> starts a run immediately, ignoring the schedule. It requires the operator role and returns the new run ID with status 202.</p>
+<p><code>POST /api/v1/jobs/{name}/pause</code> and <code>POST /api/v1/jobs/{name}/resume</code> pause and resume the schedule.</p>
+
+<h2>Runs</h2>
+<p><code>GET /api/v1/runs?job={name}&amp;status={status}</code> lists runs, newest first. Valid statuses are queued, running, succeeded, failed, and dead_lettered.</p>
+<p><code>GET /api/v1/runs/{id}/logs</code> streams the run's log output as server-sent events while the run is active.</p>
+<p><code>POST /api/v1/runs/{id}/cancel</code> cancels a queued or running run. Running commands receive SIGTERM, then SIGKILL after a 30 second grace period.</p>
+
+<h2>Pagination</h2>
+<p>List endpoints use cursor pagination. Pass the <code>next_cursor</code> value from a response as the <code>cursor</code> query parameter. The default page size is 50 and the maximum is 500.</p>
+
+<h2>Rate limits</h2>
+<p>Each token may make 600 requests per minute. Exceeding the limit returns HTTP 429 with a <code>Retry-After</code> header.</p>
+
+<h2>Errors</h2>
+<p>Errors use the shape <code>{"error": {"code": "KST-1001", "message": "..."}}</code>. KST-1001 means the job was not found, KST-2003 means the token lacks the required role, and KST-4102 means the worker running the job was lost.</p>
+</body>
+</html>
