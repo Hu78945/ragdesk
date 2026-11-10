@@ -1,0 +1,526 @@
+{
+  "generated_at": "2026-11-10T06:50:46+00:00",
+  "store": "postgres",
+  "embedder": "fastembed",
+  "corpus": {
+    "documents": 11,
+    "chunks": 70
+  },
+  "questions": {
+    "in_scope": 50,
+    "out_of_scope": 10
+  },
+  "k": 10,
+  "retrieval": [
+    {
+      "mode": "vector",
+      "recall@1": 0.7,
+      "recall@3": 0.9,
+      "recall@5": 0.92,
+      "mrr@10": 0.808,
+      "latency_ms_p50": 3.2
+    },
+    {
+      "mode": "fulltext",
+      "recall@1": 0.76,
+      "recall@3": 0.94,
+      "recall@5": 0.94,
+      "mrr@10": 0.845,
+      "latency_ms_p50": 3.3
+    },
+    {
+      "mode": "hybrid",
+      "recall@1": 0.72,
+      "recall@3": 0.94,
+      "recall@5": 0.98,
+      "mrr@10": 0.833,
+      "latency_ms_p50": 3.3
+    },
+    {
+      "mode": "hybrid+rerank",
+      "recall@1": 0.9,
+      "recall@3": 1.0,
+      "recall@5": 1.0,
+      "mrr@10": 0.943,
+      "latency_ms_p50": 377.0
+    }
+  ],
+  "refusal": {
+    "configured": {
+      "threshold": 0.65,
+      "in_scope_answered": 1.0,
+      "out_of_scope_refused": 0.5
+    },
+    "best_threshold_on_this_set": {
+      "threshold": 0.72,
+      "in_scope_answered": 0.8,
+      "out_of_scope_refused": 0.9
+    },
+    "in_scope_confidence": [
+      0.652,
+      0.904
+    ],
+    "out_of_scope_confidence": [
+      0.459,
+      0.771
+    ]
+  },
+  "extractive_answers": {
+    "answerer": "extractive",
+    "retrieval": "hybrid+rerank",
+    "evidence_in_answer": 0.84
+  },
+  "faithfulness": null,
+  "per_question": [
+    {
+      "q": "Which PostgreSQL version does Kestrel require?",
+      "ranks": {
+        "vector": 1,
+        "fulltext": 1,
+        "hybrid": 1,
+        "hybrid+rerank": 1
+      }
+    },
+    {
+      "q": "Can I run Kestrel on Windows?",
+      "ranks": {
+        "vector": 1,
+        "fulltext": 2,
+        "hybrid": 1,
+        "hybrid+rerank": 1
+      }
+    },
+    {
+      "q": "How much memory does a worker process need?",
+      "ranks": {
+        "vector": 1,
+        "fulltext": 2,
+        "hybrid": 1,
+        "hybrid+rerank": 1
+      }
+    },
+    {
+      "q": "What command initializes the database schema before the first start?",
+      "ranks": {
+        "vector": 2,
+        "fulltext": 1,
+        "hybrid": 1,
+        "hybrid+rerank": 1
+      }
+    },
+    {
+      "q": "How do I run the scheduler and a worker in a single process?",
+      "ranks": {
+        "vector": 2,
+        "fulltext": 3,
+        "hybrid": 2,
+        "hybrid+rerank": 2
+      }
+    },
+    {
+      "q": "How can I manually kick off a job outside its schedule?",
+      "ranks": {
+        "vector": 1,
+        "fulltext": 1,
+        "hybrid": 1,
+        "hybrid+rerank": 1
+      }
+    },
+    {
+      "q": "What is the default value of max_concurrency?",
+      "ranks": {
+        "vector": 6,
+        "fulltext": 1,
+        "hybrid": 3,
+        "hybrid+rerank": 1
+      }
+    },
+    {
+      "q": "How do I set configuration options through environment variables?",
+      "ranks": {
+        "vector": 1,
+        "fulltext": 1,
+        "hybrid": 1,
+        "hybrid+rerank": 1
+      }
+    },
+    {
+      "q": "If a setting is in both the config file and a command-line flag, which one wins?",
+      "ranks": {
+        "vector": 1,
+        "fulltext": 2,
+        "hybrid": 1,
+        "hybrid+rerank": 1
+      }
+    },
+    {
+      "q": "Can I change the listen address without restarting?",
+      "ranks": {
+        "vector": 1,
+        "fulltext": 1,
+        "hybrid": 1,
+        "hybrid+rerank": 1
+      }
+    },
+    {
+      "q": "What exit code does kestrel config check return for an invalid job file?",
+      "ranks": {
+        "vector": 1,
+        "fulltext": 1,
+        "hybrid": 1,
+        "hybrid+rerank": 1
+      }
+    },
+    {
+      "q": "Which queue does a job go to if none is specified?",
+      "ranks": {
+        "vector": 2,
+        "fulltext": 1,
+        "hybrid": 2,
+        "hybrid+rerank": 1
+      }
+    },
+    {
+      "q": "How do I make a cron schedule run in Berlin local time?",
+      "ranks": {
+        "vector": 5,
+        "fulltext": 2,
+        "hybrid": 3,
+        "hybrid+rerank": 2
+      }
+    },
+    {
+      "q": "What happens to runs that were missed while the scheduler was offline?",
+      "ranks": {
+        "vector": 1,
+        "fulltext": 1,
+        "hybrid": 1,
+        "hybrid+rerank": 1
+      }
+    },
+    {
+      "q": "What is the maximum number of catch-up runs with the run_all policy?",
+      "ranks": {
+        "vector": 1,
+        "fulltext": 1,
+        "hybrid": 1,
+        "hybrid+rerank": 1
+      }
+    },
+    {
+      "q": "How do I avoid a load spike when lots of jobs start at midnight?",
+      "ranks": {
+        "vector": 1,
+        "fulltext": 2,
+        "hybrid": 2,
+        "hybrid+rerank": 1
+      }
+    },
+    {
+      "q": "Does Kestrel support second-level precision in cron expressions?",
+      "ranks": {
+        "vector": 3,
+        "fulltext": 1,
+        "hybrid": 2,
+        "hybrid+rerank": 2
+      }
+    },
+    {
+      "q": "What happens to a run scheduled during the hour skipped by daylight saving time?",
+      "ranks": {
+        "vector": 2,
+        "fulltext": 1,
+        "hybrid": 1,
+        "hybrid+rerank": 1
+      }
+    },
+    {
+      "q": "Can interval-based jobs overlap with themselves?",
+      "ranks": {
+        "vector": 1,
+        "fulltext": 1,
+        "hybrid": 1,
+        "hybrid+rerank": 1
+      }
+    },
+    {
+      "q": "How many attempts does a job get by default?",
+      "ranks": {
+        "vector": 2,
+        "fulltext": 8,
+        "hybrid": 3,
+        "hybrid+rerank": 1
+      }
+    },
+    {
+      "q": "How does exponential backoff behave between retries?",
+      "ranks": {
+        "vector": 1,
+        "fulltext": 1,
+        "hybrid": 1,
+        "hybrid+rerank": 1
+      }
+    },
+    {
+      "q": "How can I stop retrying for specific exit codes?",
+      "ranks": {
+        "vector": 1,
+        "fulltext": 1,
+        "hybrid": 1,
+        "hybrid+rerank": 1
+      }
+    },
+    {
+      "q": "How long are dead-lettered runs kept?",
+      "ranks": {
+        "vector": 1,
+        "fulltext": 1,
+        "hybrid": 1,
+        "hybrid+rerank": 1
+      }
+    },
+    {
+      "q": "How do I re-run something from the dead-letter queue?",
+      "ranks": {
+        "vector": 1,
+        "fulltext": 1,
+        "hybrid": 1,
+        "hybrid+rerank": 1
+      }
+    },
+    {
+      "q": "How often do workers send heartbeats?",
+      "ranks": {
+        "vector": 1,
+        "fulltext": 1,
+        "hybrid": 1,
+        "hybrid+rerank": 1
+      }
+    },
+    {
+      "q": "What does error KST-4102 mean?",
+      "ranks": {
+        "vector": 1,
+        "fulltext": 1,
+        "hybrid": 1,
+        "hybrid+rerank": 1
+      }
+    },
+    {
+      "q": "How do I get notified when a job ultimately fails?",
+      "ranks": {
+        "vector": 3,
+        "fulltext": null,
+        "hybrid": 7,
+        "hybrid+rerank": 3
+      }
+    },
+    {
+      "q": "What roles are built into Kestrel?",
+      "ranks": {
+        "vector": 1,
+        "fulltext": 1,
+        "hybrid": 1,
+        "hybrid+rerank": 1
+      }
+    },
+    {
+      "q": "Which role do I need to pause or replay runs?",
+      "ranks": {
+        "vector": 10,
+        "fulltext": 1,
+        "hybrid": 4,
+        "hybrid+rerank": 1
+      }
+    },
+    {
+      "q": "Can I define my own custom roles?",
+      "ranks": {
+        "vector": 1,
+        "fulltext": 1,
+        "hybrid": 1,
+        "hybrid+rerank": 1
+      }
+    },
+    {
+      "q": "What is the oldest TLS version the API accepts?",
+      "ranks": {
+        "vector": 1,
+        "fulltext": 1,
+        "hybrid": 1,
+        "hybrid+rerank": 1
+      }
+    },
+    {
+      "q": "How should a job get a database password without writing it in the YAML file?",
+      "ranks": {
+        "vector": 1,
+        "fulltext": 9,
+        "hybrid": 4,
+        "hybrid+rerank": 1
+      }
+    },
+    {
+      "q": "How long are audit events retained?",
+      "ranks": {
+        "vector": 1,
+        "fulltext": 1,
+        "hybrid": 1,
+        "hybrid+rerank": 1
+      }
+    },
+    {
+      "q": "Where do I report a security vulnerability?",
+      "ranks": {
+        "vector": 1,
+        "fulltext": 1,
+        "hybrid": 1,
+        "hybrid+rerank": 1
+      }
+    },
+    {
+      "q": "How do workers avoid claiming the same run twice?",
+      "ranks": {
+        "vector": 6,
+        "fulltext": 1,
+        "hybrid": 2,
+        "hybrid+rerank": 3
+      }
+    },
+    {
+      "q": "How is a leader chosen when several schedulers run?",
+      "ranks": {
+        "vector": 2,
+        "fulltext": 2,
+        "hybrid": 2,
+        "hybrid+rerank": 1
+      }
+    },
+    {
+      "q": "Which endpoint should a load balancer use for readiness probes?",
+      "ranks": {
+        "vector": 10,
+        "fulltext": 1,
+        "hybrid": 2,
+        "hybrid+rerank": 1
+      }
+    },
+    {
+      "q": "Which Prometheus metric shows the queue backlog?",
+      "ranks": {
+        "vector": 1,
+        "fulltext": 1,
+        "hybrid": 1,
+        "hybrid+rerank": 1
+      }
+    },
+    {
+      "q": "How long are run logs kept before being pruned?",
+      "ranks": {
+        "vector": 1,
+        "fulltext": 1,
+        "hybrid": 1,
+        "hybrid+rerank": 1
+      }
+    },
+    {
+      "q": "What is the API rate limit per token?",
+      "ranks": {
+        "vector": 1,
+        "fulltext": 1,
+        "hybrid": 1,
+        "hybrid+rerank": 1
+      }
+    },
+    {
+      "q": "What is the maximum page size for list endpoints?",
+      "ranks": {
+        "vector": 1,
+        "fulltext": 1,
+        "hybrid": 1,
+        "hybrid+rerank": 1
+      }
+    },
+    {
+      "q": "What signal does a running command receive when its run is cancelled?",
+      "ranks": {
+        "vector": 2,
+        "fulltext": 1,
+        "hybrid": 1,
+        "hybrid+rerank": 1
+      }
+    },
+    {
+      "q": "What does error code KST-2003 indicate?",
+      "ranks": {
+        "vector": 1,
+        "fulltext": 1,
+        "hybrid": 1,
+        "hybrid+rerank": 1
+      }
+    },
+    {
+      "q": "What was the default API port before version 2.0?",
+      "ranks": {
+        "vector": 1,
+        "fulltext": 3,
+        "hybrid": 2,
+        "hybrid+rerank": 1
+      }
+    },
+    {
+      "q": "How do I convert old JSON job definitions?",
+      "ranks": {
+        "vector": 1,
+        "fulltext": 1,
+        "hybrid": 1,
+        "hybrid+rerank": 1
+      }
+    },
+    {
+      "q": "Why does the scheduler say 'schema version ahead of binary'?",
+      "ranks": {
+        "vector": 1,
+        "fulltext": 1,
+        "hybrid": 1,
+        "hybrid+rerank": 1
+      }
+    },
+    {
+      "q": "Can I import my existing crontab?",
+      "ranks": {
+        "vector": 1,
+        "fulltext": 1,
+        "hybrid": 1,
+        "hybrid+rerank": 1
+      }
+    },
+    {
+      "q": "How do I use a shell pipe in a job command?",
+      "ranks": {
+        "vector": 2,
+        "fulltext": 1,
+        "hybrid": 1,
+        "hybrid+rerank": 1
+      }
+    },
+    {
+      "q": "Does Kestrel send an email when a job fails?",
+      "ranks": {
+        "vector": 1,
+        "fulltext": 3,
+        "hybrid": 1,
+        "hybrid+rerank": 1
+      }
+    },
+    {
+      "q": "Why are my runs stuck in the queued state?",
+      "ranks": {
+        "vector": 1,
+        "fulltext": 1,
+        "hybrid": 1,
+        "hybrid+rerank": 1
+      }
+    }
+  ]
+}
